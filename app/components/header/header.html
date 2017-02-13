@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-static-top"
+     role="navigation"
+     style="margin-bottom: 0">
+
+    <div style="display: flex; flex-flow: row wrap;">
+
+        <div style="flex: 1 auto; padding-left: 10px;">
+            <div ng-transclude style="display: inline-block;line-height: 50px; padding-left: 10px;"></div>
+        </div>
+        <div style="text-align: center; color: #777; font-size: 18px; vertical-align: middle;line-height: 51px;flex: 2 0px; ">
+            {{vm.title}}</a>
+        </div>
+        <div style="flex: 1 auto; padding-right: 5px;">
+            <ul class="nav navbar-top-links pull-right">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-user">
+
+                        <li ng-click="vm.selectLanguage('ro_RO')"><a><h4 class="flag-icon flag-icon-ro" style="margin: 0;"></h4> Romana</a></li>
+                        <li ng-click="vm.selectLanguage('en_US')"><a><h4 class="flag-icon flag-icon-gb" style="margin: 0;"></h4> English</a></li>
+                        <li class="divider"></li>
+                        <li><a><i class="fa fa-user fa-fw"></i> {{::vm.user.username}}</a></li>
+                        <li class="divider"></li>
+                        <li><a href="" ng-click="vm.logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

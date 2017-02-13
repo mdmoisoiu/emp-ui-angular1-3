@@ -1,0 +1,66 @@
+<header title="'EMPLOYEE' | translate">
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'SAVE' | translate }}"
+            ng-click="vm.save()">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'CANCEL' | translate }}"
+            ng-click="vm.cancel()">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+</header>
+
+<div style="padding: 10px;">
+    <form name="employeeForm">
+        <div class="row">
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'FIRST_NAME' | translate }}</label>
+                <input type="text"
+                       name="firstName"
+                       class="form-control"
+                       ng-model="vm.employee.firstName"
+                       required="">
+                <p class="help-block" ng-if="employeeForm.firstName.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+            </div>
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'LAST_NAME' | translate }}</label>
+                <input type="text"
+                       name="lastName"
+                       class="form-control"
+                       ng-model="vm.employee.lastName"
+                       required="">
+                <p class="help-block" ng-if="employeeForm.lastName.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'EMAIL' | translate }}</label>
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       ng-model="vm.employee.email"
+                       required="">
+                <p class="help-block" ng-if="employeeForm.email.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+                <p class="help-block" ng-if="employeeForm.email.$error.email">{{ 'INVALID_EMAIL' | translate }}</p>
+            </div>
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'PHONE' | translate }}</label>
+                <input type="text"
+                       name="phone"
+                       class="form-control"
+                       ng-model="vm.employee.phone"
+                       required="">
+                <p class="help-block" ng-if="employeeForm.phone.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>{{ 'IMAGE' | translate }}</label>
+                <input type="file" name="file" onchange="angular.element(this).scope().vm.uploadFile(this)"/>
+
+                <img ng-src="{{vm.employee.imageUrl ? vm.employee.imageUrl : ''}}" style="max-width: 300px; max-height: 200px;margin-top: 10px;" />
+            </div>
+        </div>
+    </form>
+</div>

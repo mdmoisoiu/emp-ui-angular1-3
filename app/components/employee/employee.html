@@ -1,0 +1,52 @@
+<header title="'EMPLOYEES' | translate">
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'BACK' | translate }}"
+            ng-click="back('home')">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'ADD_EMPLOYEE' | translate }}"
+            ng-click="vm.addNewEmployee()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+</header>
+
+<div class="panel-body">
+    <div class="input-group" style="margin-bottom: 10px;">
+        <input type="text"
+               class="form-control"
+               placeholder="Search for..."
+               ng-model="employeeSearch">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+    </div>
+    <ul class="position-list">
+        <li ng-repeat="employee in vm.employees | filter: employeeSearch">
+            <div style="display: flex; flex-flow: row wrap;">
+                <div style="width: 90px;">
+                    <img ng-src="{{employee.imageUrl ? employee.imageUrl : ''}}" style="max-width: 100px; max-height: 60px;" />
+                </div>
+                <div style="flex: 3 0px;">
+                    <div class="header">
+                        <strong class="primary-font">{{::employee.firstName}} {{::employee.lastName}}</strong>
+                    </div>
+                    <p>{{::employee.email}}</p>
+                </div>
+                <div style="width: 90px;">
+                    <button type="button" class="btn btn-default" style="margin-right: 5px;"
+                            data-toggle="tooltip" title="{{ 'EDIT_EMPLOYEE' | translate }}"
+                            ng-click="go('employee-form', { employeeId : employee.id })">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-toggle="tooltip" title="{{ 'DELETE_EMPLOYEE' | translate }}"
+                            ng-click="vm.deleteEmployee(employee)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

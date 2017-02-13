@@ -1,0 +1,58 @@
+<header title="'POSITION' | translate">
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'SAVE' | translate }}"
+            ng-click="vm.save()">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'CANCEL' | translate }}"
+            ng-click="vm.cancel()">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+</header>
+
+<div style="padding: 10px;" >
+    <form name="positionForm">
+        <div class="row">
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'NAME' | translate }}</label>
+                <input type="text"
+                       name="positionName"
+                       class="form-control"
+                       ng-model="vm.position.name"
+                       required="">
+                <p class="help-block" ng-if="positionForm.positionName.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+            </div>
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'LINE_MANAGER' | translate }}</label>
+                <select name="lineManager"
+                        class="form-control"
+                        ng-model="vm.position.lineManagerId"
+                        ng-options="position.id as position.name for position in ::vm.lineManagerPositions">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'COUNTRY' | translate }}</label>
+                <select name="country"
+                        class="form-control"
+                        ng-model="vm.position.countryId"
+                        ng-options="country.id as country.name for country in ::vm.countries"
+                        required="">
+                </select>
+                <p class="help-block" ng-if="positionForm.country.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+            </div>
+            <div class="form-group col-md-6" show-errors>
+                <label>{{ 'EMPLOYEE' | translate }}</label>
+                <select name="employee"
+                        class="form-control"
+                        ng-model="vm.position.employeeId"
+                        ng-options="employee.id as employee.firstName + ' ' + employee.lastName for employee in ::vm.employees">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,81 @@
+<header></header>
+
+<loader ng-show="vm.showLoading"></loader>
+
+<div class="row" ng-hide="vm.showLoading">
+    <div class="visible-md-block" style="height: 100px;"></div>
+
+    <div class="col-md-8 col-md-offset-2" >
+        <div class="row" style="margin: 10px;">
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-sitemap fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{::vm.positionsNumber}}</div>
+                                <div>{{ 'POSITIONS' | translate }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" ng-click="go('position')">
+                        <div class="panel-footer">
+                            <span class="pull-left">{{ 'VIEW_DETAILS' | translate }}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-users fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{::vm.employeesNumber}}</div>
+                                <div>{{ 'EMPLOYEES' | translate }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" ng-click="go('employee')">
+                        <div class="panel-footer">
+                            <span class="pull-left">{{ 'VIEW_DETAILS' | translate }}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comment fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">...</div>
+                                <div>{{ 'ONLINE_USERS' | translate }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" ng-click="go('chat')">
+                        <div class="panel-footer">
+                            <span class="pull-left">{{ 'CHAT' | translate }}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

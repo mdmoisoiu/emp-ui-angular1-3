@@ -1,0 +1,45 @@
+<div class="row" style="padding-top: 100px;">
+    <div class="col-md-4 col-md-offset-4" >
+        <div class="panel panel-default" style="margin: 10px;">
+            <div class="panel-body">
+                <div class="text-right">
+                    <h4 ng-click="selectLanguage('ro_RO')" class="flag-icon flag-icon-ro" style="margin: 0;cursor: pointer;"></h4>
+                    <h4 ng-click="selectLanguage('en_US')" class="flag-icon flag-icon-gb" style="margin: 0;cursor: pointer;"></h4>
+                </div>
+                <form name="loginForm">
+                    <div class="form-group" show-errors>
+                        <label>{{ 'USERNAME' | translate }}</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text"
+                                   name="username"
+                                   class="form-control"
+                                   ng-model="vm.username"
+                                   required="">
+                        </div>
+                        <p class="help-block" ng-if="loginForm.username.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+                    </div>
+
+                    <div class="form-group" show-errors>
+                        <label>{{ 'PASSWORD' | translate }}</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            <input type="password"
+                                   name="password"
+                                   class="form-control"
+                                   ng-model="vm.password"
+                                   required="">
+                        </div>
+                        <p class="help-block" ng-if="loginForm.password.$error.required">{{ 'FIELD_REQUIRED' | translate }}</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary pull-right"
+                                ng-click="vm.login()">{{ 'SUBMIT' | translate }}</button>
+                        <label class="pull-right" style="margin-right: 10px;padding-top: 5px;">{{ 'REMEMBER' | translate }} <input type="checkbox" ng-model="vm.rememberMe"></label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

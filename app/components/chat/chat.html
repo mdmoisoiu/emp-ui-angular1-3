@@ -1,0 +1,28 @@
+<header title="'CHAT' | translate">
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'BACK' | translate }}"
+            ng-click="back('home')">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    </button>
+</header>
+
+<div class="panel-body">
+    <div class="input-group">
+        <input type="text"
+               class="form-control"
+               ng-keypress="vm.onNewMessageKeyPress($event)"
+               ng-model="vm.newMessage" />
+
+        <span class="input-group-btn">
+            <button class="btn btn-primary"
+                    type="button"
+                    ng-disabled="!vm.newMessage"
+                    ng-click="vm.postMessage()"
+                    >Post</button>
+        </span>
+    </div>
+    <ul class="chat-list">
+        <li ng-repeat="message in vm.messages">[{{::message.dateTime}}] <b>{{::message.userName}}</b>: {{::message.message}}</li>
+    </ul>
+</div>
+

@@ -1,0 +1,41 @@
+<header title="'POSITIONS' | translate">
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'BACK' | translate }}"
+            ng-click="back('home')">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="btn btn-primary"
+            data-toggle="tooltip" title="{{ 'ADD_POSITION' | translate }}"
+            ng-click="vm.addNewPosition()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+</header>
+
+<loader ng-show="vm.showLoading"></loader>
+
+<div class="panel-body" ng-hide="vm.showLoading">
+    <ul class="position-list">
+        <li ng-repeat="position in vm.positions">
+            <div style="display: flex; flex-flow: row wrap;">
+                <div ng-style="{'flex': '3 0px', 'padding-left': position.orgChartLevel*15 + 'px'}">
+                    <div class="header">
+                        <strong class="primary-font">{{::position.name}} - {{::position | PositionEmployeeName}}</strong>
+                    </div>
+                    <p>{{::position.countryName}}</p>
+                </div>
+                <div style="width: 90px;">
+                    <button type="button" class="btn btn-default" style="margin-right: 5px;"
+                            data-toggle="tooltip" title="{{ 'EDIT_POSITION' | translate }}"
+                            ng-click="go('position-form', { positionId : position.id })">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-toggle="tooltip" title="{{ 'DELETE_POSITION' | translate }}"
+                            ng-click="vm.deletePosition(position)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

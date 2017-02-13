@@ -1,0 +1,10 @@
+/node_modules
+/bower_components
+/app/compiled.js
+/logs
+/tmp
+/.idea
+/.DS_Store
+/images
+*.iml
+*.mwb

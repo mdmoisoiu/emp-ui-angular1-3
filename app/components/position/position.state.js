@@ -52,7 +52,7 @@
                             } else {
                                 return BackendGateway.post("CountryService", "getCountries", null)
                                     .then( function(response){
-                                        return CountryModel.countries = response.data.countries;
+                                        return CountryModel.countries = response.data.countries; // jshint ignore:line
                                     });
                             }
                         },

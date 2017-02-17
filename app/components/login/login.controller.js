@@ -3,8 +3,8 @@
     'use strict';
     angular.module('employeeDirectory').controller('LoginController', LoginController);
 
-    var inject = ['$scope', '$rootScope', '$log', 'localStorageService', 'BackendGateway', 'SessionService'];
-    function LoginController($scope, $rootScope, $log, localStorageService, BackendGateway, SessionService) {
+    var inject = ['$scope', '$rootScope', '$uibModal', 'localStorageService', 'BackendGateway', 'SessionService'];
+    function LoginController($scope, $rootScope, $uibModal, localStorageService, BackendGateway, SessionService) {
 
         var vm = this;
 
@@ -36,6 +36,11 @@
                             }
 
                             $rootScope.go('home');
+                        } else {
+                            $uibModal.open({
+                                animation: true,
+                                template: '<div class="modal-body">Invalid username or password!</div>'
+                            });
                         }
                     });
             }

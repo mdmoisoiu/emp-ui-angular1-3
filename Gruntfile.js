@@ -144,8 +144,7 @@ module.exports = function (grunt) {
         'jshint',
         'concat',
         'ngtemplates:app',
-        /* 'connect:server', */
-        /* 'open', */
+        'connect:server',
         'watch'
     ]);
 

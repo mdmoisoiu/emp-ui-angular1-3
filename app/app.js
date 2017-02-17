@@ -1,6 +1,8 @@
 (function(){
     'use strict';
     // Declare app level module which depends on views, and components
+    angular.module('employeeDirectory.templates', []);
+
     angular.module('employeeDirectory', [
             'ngRoute',
             'ngTouch',
@@ -10,7 +12,8 @@
             'ui.bootstrap.showErrors',
             'ui.bootstrap',
             'LocalStorageModule',
-            'pascalprecht.translate'
+            'pascalprecht.translate',
+            'employeeDirectory.templates'
         ]).
         config([ '$urlRouterProvider', 'localStorageServiceProvider', '$translateProvider', function($urlRouterProvider, localStorageServiceProvider, $translateProvider) {
 

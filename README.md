@@ -1,7 +1,7 @@
 ## About
 
 This is the Angular 1.3 version of my pet project "Employee Directory".<br/>
-It contains a set of functionality common to data driven applications.<br/>
+It contains a set of features common to data driven applications.<br/>
 
 ## Setup
 

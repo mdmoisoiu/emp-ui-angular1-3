@@ -13,9 +13,9 @@ It contains a set of features common to data driven applications.<br/>
 6. Login with "test" "test"
 
 ## Functionality
-#####The ui will expose the following functionality( per screen ):
+##### The ui will expose the following functionality( per screen ):
 
-####Login:
+#### Login:
         
     - US1.1 
         Given I am an unauthenticated user, 
@@ -34,7 +34,7 @@ It contains a set of features common to data driven applications.<br/>
         When I press "Login" button on login screen, after I entered a valid password/username combination,
         Then I should navigate to home screen
 
-####Home:
+#### Home:
     - US2.1
         Given I am an authenticated user, 
         When I am on home screen,
@@ -44,7 +44,7 @@ It contains a set of features common to data driven applications.<br/>
         When I am on home screen and I press "View Detail"( for Positions and "Employees") or "Chat" buttons,
         Then I should navigate to described screen
 
-#####Chat:
+##### Chat:
     - US3.1
             Given I am an authenticated user, 
             When I am on chat screen,
@@ -55,7 +55,7 @@ It contains a set of features common to data driven applications.<br/>
             Then I should see the message in the chat messages list, all the other active chat users should see the 
             message in their messages list with a delay of max 10 secs
 
-#####Positions:
+##### Positions:
     - US3.1
             Given I am an authenticated user, 
             When I am on positions screen,
@@ -87,7 +87,7 @@ It contains a set of features common to data driven applications.<br/>
             Then I should be able to commit this new position 
             Or I should be able to cancel adding a new position
 
-#####Employees:
+##### Employees:
     - US3.1
             Given I am an authenticated user, 
             When I am on employees screen,
@@ -121,19 +121,19 @@ It contains a set of features common to data driven applications.<br/>
             Then I should be able to commit this new employee 
             Or I should be able to cancel adding a new employee
 
-#####Common to all screens:
+##### Common to all screens:
     - US5.1
             Given I am a any type of user, 
             When I am on any screen mentioned in title, and I change the language, 
             Then I should see all language specific text in the new language
 
-#####Common to Home, Chat, Positions and Employees:
+##### Common to Home, Chat, Positions and Employees:
     - US6.1
             Given I am an authenticated user, 
             When I am on any screen mentioned in title, and I press "Logout" button, 
             Then I should navigate to login screen and I should not be able to access any other screen untill I log in again
 
-#####Common to Chat, Positions and Employees:
+##### Common to Chat, Positions and Employees:
     - US7.1
             Given I am an authenticated user, 
             When I am on any screen mentioned in title, and I press "Back" button, 
